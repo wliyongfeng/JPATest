@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+
+	<persistence-unit name="customer">
+		<description>Persistence Unit for H2 database</description>
+		<class>li.test.hibernate_test.dto.Customer</class>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect " />
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver" />
+			<property name="hibernate.connection.username" value="system" />
+			<property name="hibernate.connection.password" value="liyongfeng" />
+			<property name="hibernate.connection.url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.show_sql" value="true" />
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="production">
+		<description>Persistence Unit for H2 database</description>
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>li.test.hibernate_test.dto.Customer</class>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+			<property name="hibernate.connection.driver_class" value="org.h2.Driver" />
+			<property name="hibernate.connection.username" value="sa" />
+			<property name="hibernate.connection.password" value="" />
+			<property name="hibernate.connection.url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.connection.autocommit" value="false" />
+			<property name="hibernate.show_sql" value="true" />
+		</properties>
+	</persistence-unit>
+</persistence>
