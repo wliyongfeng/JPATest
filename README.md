@@ -1,1 +1,1 @@
-###This is a test of JPA and test the log level of log4j
+###This is a JPA and the log level of log4j test
